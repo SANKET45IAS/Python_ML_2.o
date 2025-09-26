@@ -1,0 +1,148 @@
+📘 NumPy – Detailed Notes
+1. 🔹 What is NumPy?
+
+NumPy (Numerical Python) is a Python library used for numerical and scientific computing.
+
+It provides ndarray (n-dimensional array) which is more powerful and faster than Python’s normal list.
+
+Written in C and optimized with BLAS & LAPACK (low-level math libraries), so operations are extremely fast.
+
+2. 🔹 Why Use NumPy Instead of List?
+Feature	Python List	NumPy Array
+Storage	Stores pointers to objects (slower)	Stores homogeneous data in continuous memory
+Speed	Slower due to dynamic typing	Much faster (vectorized C code)
+Operations	Element-wise loops	Vectorized, no explicit loop required
+Memory	More memory usage	Compact memory
+
+👉 Example: a + b in list → error,
+But in NumPy → adds element-wise instantly.
+
+3. 🔹 Where is NumPy Used?
+
+Data Science & Machine Learning → Handling large datasets, matrix operations.
+
+Image Processing → Pixels stored as arrays.
+
+Scientific Simulations → Physics, chemistry, statistics.
+
+Finance → Time-series, stock market analysis.
+
+AI & Deep Learning → Tensor libraries like TensorFlow, PyTorch are built on NumPy.
+
+4. 🔹 NumPy Array Basics
+
+Main object: ndarray (n-dimensional array).
+
+Properties:
+
+ndarray.ndim → number of dimensions
+
+ndarray.shape → (rows, cols)
+
+ndarray.size → total elements
+
+ndarray.dtype → data type
+
+ndarray.itemsize → memory used per element
+
+ndarray.nbytes → total memory
+
+5. 🔹 Array Creation Functions
+Function	Purpose
+np.array()	Convert list/tuple to array
+np.zeros((m,n))	Create all zeros array
+np.ones((m,n))	Create all ones array
+np.full((m,n), value)	Create array with a fixed value
+np.eye(n)	Identity matrix
+np.arange(start, stop, step)	Like range() but array
+np.linspace(start, stop, num)	Equally spaced numbers
+np.random.rand(m,n)	Random numbers [0,1]
+np.random.randint(low, high, size)	Random integers
+6. 🔹 Indexing & Slicing Arrays
+
+Access elements with [ ] like lists.
+
+Supports slicing: arr[start:end:step].
+
+Can use boolean indexing: arr[arr > 5].
+
+Fancy indexing: arr[[1,3,5]].
+
+7. 🔹 Reshaping & Manipulation
+
+arr.reshape(m,n) → change shape.
+
+arr.flatten() → convert to 1D.
+
+arr.T → transpose.
+
+np.vstack((a,b)) → stack vertically.
+
+np.hstack((a,b)) → stack horizontally.
+
+np.concatenate([a,b], axis=0/1) → join arrays.
+
+8. 🔹 Array Modification
+
+Assign values directly: arr[1:3] = 10.
+
+Replace using condition: arr[arr<0] = 0.
+
+Delete/Insert:
+
+np.delete(arr, index, axis)
+
+np.insert(arr, index, value, axis)
+
+9. 🔹 Broadcasting & Vectorization
+
+Broadcasting: NumPy automatically expands arrays of different shapes to match.
+👉 Example:
+
+a = np.array([1,2,3])
+b = 5
+print(a + b)   # [6,7,8]
+
+
+Vectorization: Apply operations to all elements at once (no loops).
+
+10. 🔹 Handling Missing Values
+
+np.nan → represents missing values.
+
+Functions:
+
+np.isnan(arr) → check NaN values.
+
+np.nan_to_num(arr) → replace NaN with 0.
+
+np.nanmean(arr) → mean ignoring NaN.
+
+np.nanmax(arr) / np.nanmin(arr) → ignore NaN.
+
+11. 🔹 Important Mathematical Functions
+Function	Work
+np.add, np.subtract, np.multiply, np.divide	Element-wise arithmetic
+np.sum(), np.mean(), np.median()	Statistics
+np.std(), np.var()	Standard deviation, variance
+np.max(), np.min(), np.argmax(), np.argmin()	Min/Max and their index
+np.dot(a,b)	Dot product (matrix multiplication)
+np.linalg.inv()	Matrix inverse
+np.linalg.det()	Determinant
+np.linalg.eig()	Eigenvalues, eigenvectors
+12. 🔹 Advantages of NumPy
+
+✅ Superfast compared to lists
+✅ Supports large data (GBs of arrays)
+✅ Integrated with other libraries (Pandas, TensorFlow)
+✅ Rich set of mathematical & statistical tools
+
+13. 🔹 Summary
+
+NumPy = Base of Python Scientific Computing.
+
+Provides fast, memory-efficient arrays.
+
+Supports matrix operations, statistics, reshaping, broadcasting.
+
+Used everywhere: AI, ML, Data Science, Engineering, Finance.
